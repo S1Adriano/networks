@@ -79,7 +79,7 @@
 
         .content-section.active {
             display: block;
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.55s ease-in;
         }
 
         @keyframes fadeIn {
@@ -141,7 +141,7 @@
         .animate-card {
             opacity: 0;
             transform: translateY(30px);
-            animation: slideInUp 0.6s ease-out forwards;
+            animation: slideInUp 0.55s ease-out forwards;
         }
 
         @keyframes slideInUp {
@@ -223,7 +223,6 @@
             <div class="nav-tab" onclick="showSection('mobile')">Radio Móvil</div>
         </div>
 
-        <!-- Sección: Introducción -->
         <div id="overview" class="content-section active">
             <h2>🔗 Introducción a las Redes Inalámbricas</h2>
             <p>Las tecnologías inalámbricas abarcan diferentes protocolos y estándares utilizados en la vida cotidiana, como IrDA, Bluetooth, Wi-Fi, GSM o UMTS. Estas tecnologías revolucionaron la forma en que nos comunicamos y accedemos a la información.</p>
@@ -243,7 +242,6 @@
             </div>
         </div>
 
-        <!-- Sección: Tipos de Redes -->
         <div id="types" class="content-section">
             <h2>📡 Clasificación por Alcance</h2>
             <p>Las redes inalámbricas se clasifican según su alcance y área de cobertura:</p>
@@ -283,7 +281,6 @@
             </div>
         </div>
 
-        <!-- Sección: IEEE 802.11 -->
         <div id="ieee" class="content-section">
             <h2>⚙️ Estándar IEEE 802.11</h2>
             <p>El IEEE 802.11 define protocolos en las capas física y de enlace de datos de la arquitectura OSI para redes WLAN. Su versión original (1997) operaba a 1-2 Mbps en 2,4 GHz, pero fue reemplazada por mejoras posteriores:</p>
@@ -334,7 +331,6 @@
             </div>
         </div>
 
-        <!-- Sección: Wi-Fi -->
         <div id="wifi" class="content-section">
             <h2>📶 Wi-Fi</h2>
             <p>Wi-Fi es una marca de la <strong>Wi-Fi Alliance</strong>, asociación de fabricantes que certifica la interoperabilidad de productos basados en IEEE 802.11. Aunque suele asociarse con "Wireless Fidelity", no corresponde a un acrónimo.</p>
@@ -371,7 +367,6 @@
             </div>
         </div>
 
-        <!-- Sección: Dispositivos -->
         <div id="devices" class="content-section">
             <h2>🖥️ Dispositivos en Redes IEEE 802.11</h2>
             
@@ -424,7 +419,6 @@
             </div>
         </div>
 
-        <!-- Sección: Seguridad -->
         <div id="security" class="content-section">
             <h2>🔐 Seguridad: Autenticación y Encriptación</h2>
             
@@ -467,7 +461,6 @@
             </div>
         </div>
 
-        <!-- Sección: Radio Móvil -->
         <div id="mobile" class="content-section">
             <h2>📻 Radio Móvil</h2>
             <p>Radio móvil es un dispositivo de comunicación inalámbrica diseñado para usarse en movimiento, generalmente instalado en vehículos (automóviles, camiones, ambulancias, patrullas, etc.). Funciona mediante ondas de radio y se conecta a una red de estaciones base o repetidoras que amplían su cobertura.</p>
@@ -541,55 +534,44 @@
     </div>
 
     <script>
-        // Función para cambiar secciones
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
             
-            // Desactivar todas las pestañas
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             
-            // Mostrar la sección seleccionada
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
             
-            // Animar elementos secuencialmente
             animateElements(sectionId);
         }
 
-        // Función para animar elementos secuencialmente
         function animateElements(sectionId) {
             const section = document.getElementById(sectionId);
             const cards = section.querySelectorAll('.tech-card, .info-card, .security-item');
             
-            // Resetear animaciones
             cards.forEach(card => {
                 card.classList.remove('animate-card');
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
             });
             
-            // Animar cada elemento con delay
             cards.forEach((card, index) => {
                 setTimeout(() => {
                     card.classList.add('animate-card');
                     card.style.animationDelay = '0s';
-                }, index * 50); // 0.05 segundos entre cada animación
+                }, index * 55);
             });
         }
 
-        // Animar elementos al cargar la página
         window.addEventListener('load', () => {
             animateElements('overview');
         });
 
-        // Configuración común de Chart.js
         Chart.defaults.font.family = 'Segoe UI';
         Chart.defaults.color = '#333';
 
-        // Gráfico de introducción
         const overviewCtx = document.getElementById('overviewChart').getContext('2d');
         new Chart(overviewCtx, {
             type: 'doughnut',
@@ -622,7 +604,6 @@
             }
         });
 
-        // Gráfico de radio móvil
         const mobileCtx = document.getElementById('mobileChart').getContext('2d');
         new Chart(mobileCtx, {
             type: 'polarArea',
@@ -655,7 +636,6 @@
             }
         });
 
-        // Gráfico de tipos de redes
         const typesCtx = document.getElementById('typesChart').getContext('2d');
         new Chart(typesCtx, {
             type: 'bar',
@@ -690,7 +670,6 @@
             }
         });
 
-        // Gráfico de estándares IEEE 802.11
         const ieeeCtx = document.getElementById('ieeeChart').getContext('2d');
         new Chart(ieeeCtx, {
             type: 'line',
@@ -726,7 +705,6 @@
             }
         });
 
-        // Gráfico de canales Wi-Fi
         const channelsCtx = document.getElementById('channelsChart').getContext('2d');
         new Chart(channelsCtx, {
             type: 'bar',
@@ -737,7 +715,7 @@
                     data: [2412, 2417, 2422, 2427, 2432, 2437, 2442, 2447, 2452, 2457, 2462, 2467, 2472],
                     backgroundColor: function(context) {
                         const value = context.parsed.x;
-                        if (value === 0 || value === 5 || value === 10) { // Canales 1, 6, 11
+                        if (value === 0 || value === 5 || value === 10) {
                             return '#667eea';
                         }
                         return '#764ba2';
@@ -772,7 +750,6 @@
             }
         });
 
-        // Gráfico de dispositivos
         const devicesCtx = document.getElementById('devicesChart').getContext('2d');
         new Chart(devicesCtx, {
             type: 'radar',
@@ -814,7 +791,6 @@
             }
         });
 
-        // Gráfico de seguridad
         const securityCtx = document.getElementById('securityChart').getContext('2d');
         new Chart(securityCtx, {
             type: 'bar',
