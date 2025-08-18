@@ -79,7 +79,7 @@
 
         .content-section.active {
             display: block;
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.55s ease-in;
         }
 
         @keyframes fadeIn {
@@ -141,7 +141,7 @@
         .animate-card {
             opacity: 0;
             transform: translateY(30px);
-            animation: slideInUp 0.6s ease-out forwards;
+            animation: slideInUp 0.55s ease-out forwards;
         }
 
         @keyframes slideInUp {
@@ -220,30 +220,28 @@
             <div class="nav-tab" onclick="showSection('wifi')">Wi-Fi</div>
             <div class="nav-tab" onclick="showSection('devices')">Dispositivos</div>
             <div class="nav-tab" onclick="showSection('security')">Seguridad</div>
-            <div class="nav-tab" onclick="showSection('mobile')">Radio Móvil</div>
+            <div class="nav-tab" onclick="showSection('mobile')">Radio Mobile</div>
         </div>
-
-        <!-- Sección: Introducción -->
         <div id="overview" class="content-section active">
             <h2>🔗 Introducción a las Redes Inalámbricas</h2>
-            <p>Las tecnologías inalámbricas abarcan diferentes protocolos y estándares utilizados en la vida cotidiana, como IrDA, Bluetooth, Wi-Fi, GSM o UMTS. Estas tecnologías revolucionaron la forma en que nos comunicamos y accedemos a la información.</p>
+            <p>Las redes inalámbricas nos permiten conectar dispositivos entre sí y a Internet sin necesidad de cables. Son parte fundamental de nuestra vida diaria, desde el Wi-Fi que usamos en casa hasta el Bluetooth de nuestros auriculares.</p>
             
             <div class="chart-container">
                 <canvas id="overviewChart"></canvas>
             </div>
 
             <div class="info-card">
-                <h3>💡 Características Principales</h3>
+                <h3>💡 Ventajas principales</h3>
                 <ul>
-                    <li>Movilidad y flexibilidad en la conectividad</li>
-                    <li>Reducción de cables y infraestructura física</li>
-                    <li>Facilidad de instalación y mantenimiento</li>
-                    <li>Escalabilidad según las necesidades</li>
+                    <li>No requieren cables para conectarse</li>
+                    <li>Permiten movilidad mientras estás conectado</li>
+                    <li>Son fáciles de instalar y configurar</li>
+                    <li>Pueden conectar múltiples dispositivos</li>
                 </ul>
             </div>
         </div>
+      
 
-        <!-- Sección: Tipos de Redes -->
         <div id="types" class="content-section">
             <h2>📡 Clasificación por Alcance</h2>
             <p>Las redes inalámbricas se clasifican según su alcance y área de cobertura:</p>
@@ -283,7 +281,6 @@
             </div>
         </div>
 
-        <!-- Sección: IEEE 802.11 -->
         <div id="ieee" class="content-section">
             <h2>⚙️ Estándar IEEE 802.11</h2>
             <p>El IEEE 802.11 define protocolos en las capas física y de enlace de datos de la arquitectura OSI para redes WLAN. Su versión original (1997) operaba a 1-2 Mbps en 2,4 GHz, pero fue reemplazada por mejoras posteriores:</p>
@@ -333,8 +330,41 @@
                 </ul>
             </div>
         </div>
+        <div id="wifi" class="content-section">
+            <h2>📶 Wi-Fi</h2>
+            <p>Wi-Fi es una tecnología que permite conectar dispositivos electrónicos a Internet de forma inalámbrica. Es como un "puente invisible" que conecta tu computadora, teléfono o tablet con el router de Internet sin necesidad de cables.</p>
 
-        <!-- Sección: Wi-Fi -->
+            <div class="info-card">
+            <h3>🏷️ ¿Qué significa Wi-Fi?</h3>
+            <p>Aunque muchos piensan que significa "Wireless..", en realidad es simplemente un nombre comercial creado para que fuera fácil de recordar. Lo importante seria que permite compartir Internet y archivos entre dispositivos de forma inalámbrica.</p>
+            </div>
+
+            <h3>🌊 Cómo funciona</h3>
+            <p>Wi-Fi usa ondas de radio para transmitir información. Estas ondas viajan por el aire, permitiendo que los dispositivos se comuniquen entre sí:</p>
+            
+            <div class="frequency-band">
+            <h4>Dispositivos comunes que usan Wi-Fi</h4>
+            <p>Celulares • Laptops • Tablets • Smart TVs • Consolas de videojuegos</p>
+            </div>
+
+            <div class="chart-container">
+            <canvas id="channelsChart"></canvas>
+            </div>
+
+            <p>La señal Wi-Fi puede verse afectada por paredes, distancia y otros dispositivos electrónicos, por lo que es importante colocar el router en un lugar central y elevado.</p>
+
+            <div class="tech-grid">
+            <div class="tech-card">
+                <h3>🔄 Conexión directa</h3>
+                <p>Los dispositivos pueden conectarse entre sí directamente, como cuando compartes archivos entre dos celulares.</p>
+            </div>
+            
+            <div class="tech-card">
+                <h3>🏢 Conexión con router</h3>
+                <p>La forma más común: todos los dispositivos se conectan a un router central que distribuye la conexión a Internet.</p>
+            </div>
+            </div>
+        </div>
         <div id="wifi" class="content-section">
             <h2>📶 Wi-Fi</h2>
             <p>Wi-Fi es una marca de la <strong>Wi-Fi Alliance</strong>, asociación de fabricantes que certifica la interoperabilidad de productos basados en IEEE 802.11. Aunque suele asociarse con "Wireless Fidelity", no corresponde a un acrónimo.</p>
@@ -371,7 +401,6 @@
             </div>
         </div>
 
-        <!-- Sección: Dispositivos -->
         <div id="devices" class="content-section">
             <h2>🖥️ Dispositivos en Redes IEEE 802.11</h2>
             
@@ -424,7 +453,6 @@
             </div>
         </div>
 
-        <!-- Sección: Seguridad -->
         <div id="security" class="content-section">
             <h2>🔐 Seguridad: Autenticación y Encriptación</h2>
             
@@ -466,37 +494,39 @@
                 <p><strong>Nota:</strong> Aunque WPA es más seguro que WEP, aún presenta limitaciones frente a ataques avanzados. Se recomienda el uso de WPA2 o superior.</p>
             </div>
         </div>
-
-        <!-- Sección: Radio Móvil -->
         <div id="mobile" class="content-section">
-            <h2>📻 Radio Móvil</h2>
-            <p>Radio móvil es un dispositivo de comunicación inalámbrica diseñado para usarse en movimiento, generalmente instalado en vehículos (automóviles, camiones, ambulancias, patrullas, etc.). Funciona mediante ondas de radio y se conecta a una red de estaciones base o repetidoras que amplían su cobertura.</p>
+            <h2>📻 Radio Mobile</h2>
+            <p><strong>Radio Mobile</strong> es un programa gratuito que ayuda a diseñar y probar redes de comunicación inalámbrica. 
+               Permite visualizar en mapas cómo se propagarán las señales de radio, lo que es muy útil para planificar la ubicación 
+               de antenas y equipos de comunicación.</p>
             
             <div class="info-card">
-                <h3>🚗 Definición Simple</h3>
-                <p>Permite comunicación a distancia sin necesidad de cables, utilizando frecuencias de radio específicas. Se diferencia de un teléfono móvil porque suele estar orientado a comunicaciones profesionales o de servicio (policía, bomberos, transporte, seguridad, etc.).</p>
+                <h3>💡 ¿Para qué sirve?</h3>
+                <p>Con Radio Mobile puedes predecir si dos puntos podrán comunicarse inalámbricamente, teniendo en cuenta 
+                   el terreno y los obstáculos entre ellos. Es como tener un simulador que te muestra si tu red funcionará 
+                   antes de instalarla.</p>
             </div>
 
             <h3>⚡ Características Principales</h3>
             <div class="tech-grid">
                 <div class="tech-card">
-                    <h3>📞 Push-to-Talk</h3>
-                    <p>Comunicación en tiempo real mediante botón de presionar para hablar, permitiendo conversaciones instantáneas entre equipos.</p>
+                    <h3>🗺️ Mapas y Terreno</h3>
+                    <p>Usa mapas reales para mostrar montañas, valles y edificios que podrían afectar la señal.</p>
                 </div>
                 
                 <div class="tech-card">
-                    <h3>🌐 Cobertura Amplia</h3>
-                    <p>Funciona mediante repetidores que extienden el alcance de comunicación mucho más allá de la distancia directa.</p>
+                    <h3>📡 Análisis de Cobertura</h3>
+                    <p>Muestra hasta dónde llegará la señal de tus antenas y dónde habrá mejor conexión.</p>
                 </div>
                 
                 <div class="tech-card">
-                    <h3>👥 Canales Dedicados</h3>
-                    <p>Grupos de trabajo específicos con canales asignados para evitar interferencias y mantener comunicaciones privadas.</p>
+                    <h3>🔧 Fácil de Usar</h3>
+                    <p>No necesitas ser un experto para usarlo. Tiene una interfaz intuitiva y herramientas visuales.</p>
                 </div>
                 
                 <div class="tech-card">
-                    <h3>💪 Alta Potencia</h3>
-                    <p>Mayor potencia de transmisión que las radios portátiles, aprovechando la alimentación del vehículo.</p>
+                    <h3>💻 Gratuito</h3>
+                    <p>Puedes descargarlo y usarlo sin costo, ideal para aprender y hacer proyectos.</p>
                 </div>
             </div>
 
@@ -504,158 +534,202 @@
                 <canvas id="mobileChart"></canvas>
             </div>
 
-            <h3>🚨 Aplicaciones Principales</h3>
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3>🚓 Servicios de Emergencia</h3>
-                    <p>Policía, bomberos, paramédicos y equipos de rescate utilizan radios móviles para coordinación en tiempo real durante emergencias.</p>
-                </div>
-                
-                <div class="tech-card">
-                    <h3>🚚 Transporte y Logística</h3>
-                    <p>Empresas de transporte, delivery y logística para comunicación con conductores y coordinación de rutas.</p>
-                </div>
-                
-                <div class="tech-card">
-                    <h3>🏗️ Construcción e Industria</h3>
-                    <p>Comunicación en obras, sitios industriales y operaciones que requieren coordinación de equipos móviles.</p>
-                </div>
-                
-                <div class="tech-card">
-                    <h3>🔒 Seguridad Privada</h3>
-                    <p>Empresas de seguridad y vigilancia para comunicación entre patrullas y central de monitoreo.</p>
-                </div>
-            </div>
-
             <div class="info-card">
-                <h3>📡 Resumen Técnico</h3>
-                <p><strong>Un radio móvil es una radio de dos vías, fija en un vehículo, que permite a personas o equipos mantenerse comunicados a través de frecuencias de radio, siendo muy utilizada en servicios de emergencia y operaciones logísticas.</strong></p>
+                <h3>👥 ¿Quién lo usa?</h3>
                 <ul>
-                    <li>Instalación permanente en vehículos</li>
-                    <li>Comunicación bidireccional instantánea</li>
-                    <li>Red de repetidoras para mayor cobertura</li>
-                    <li>Orientado a uso profesional y comercial</li>
+                    <li>Técnicos que instalan redes Wi-Fi</li>
+                    <li>Radioaficionados</li>
+                    <li>Estudiantes de telecomunicaciones</li>
+                    <li>Empresas de comunicaciones</li>
                 </ul>
             </div>
         </div>
+<div id="mobile" class="content-section">
+    <h2>📻 Radio Mobile</h2>
+    <p><strong>Radio Mobile</strong> es un software de distribución libre utilizado para el diseño y simulación de redes de telecomunicaciones inalámbricas. 
+       Fue desarrollado por Roger Coudé y está orientado principalmente al análisis de enlaces de radiofrecuencia en sistemas como radioenlaces, 
+       Wi-Fi, LTE, GSM, sistemas de emergencia y redes de radioaficionados.</p>
+    
+    <div class="info-card">
+        <h3>💡 Definición</h3>
+        <p>Radio Mobile permite a ingenieros, estudiantes y profesionales modelar la propagación de radio en diferentes entornos geográficos 
+           mediante el uso de mapas digitales y modelos matemáticos de propagación de señal.</p>
+    </div>
+
+    <h3>⚡ Características Principales</h3>
+    <div class="tech-grid">
+        <div class="tech-card">
+            <h3>🗺️ Mapas Digitales</h3>
+            <p>Usa información de elevación del terreno (DEM) para calcular la cobertura de radio en áreas específicas.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>📡 Simulación de Enlaces</h3>
+            <p>Permite calcular pérdidas por propagación, margen de enlace, zonas de Fresnel y confiabilidad de la comunicación.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>👥 Aplicaciones</h3>
+            <p>Utilizado por organismos de seguridad, radioaficionados, operadores de telecomunicaciones y centros educativos.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>🔧 Personalización</h3>
+            <p>Soporta diferentes modelos de propagación (Okumura-Hata, ITM, COST-231, etc.) y múltiples configuraciones de antenas y equipos.</p>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="mobileChart"></canvas>
+    </div>
+
+    <h3>🚀 Usos Comunes</h3>
+    <div class="tech-grid">
+        <div class="tech-card">
+            <h3>🏙️ Redes Inalámbricas Urbanas</h3>
+            <p>Planificación de enlaces Wi-Fi, LTE y 5G en áreas metropolitanas.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>🚑 Comunicaciones de Emergencia</h3>
+            <p>Diseño de redes de radio para bomberos, policía y servicios de rescate.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>📻 Radioaficionados</h3>
+            <p>Amplio uso por la comunidad de radioaficionados para probar coberturas de repetidores.</p>
+        </div>
+        
+        <div class="tech-card">
+            <h3>🏞️ Áreas Rurales</h3>
+            <p>Optimización de redes inalámbricas en zonas con geografía compleja y baja densidad poblacional.</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3>📡 Resumen Técnico</h3>
+        <p><strong>Radio Mobile</strong> es una herramienta de modelado y simulación que combina mapas digitales, parámetros de equipos 
+        y modelos de propagación para analizar la viabilidad de redes inalámbricas.</p>
+        <ul>
+            <li>Software libre y ampliamente usado en telecomunicaciones</li>
+            <li>Compatible con diferentes fuentes de mapas (SRTM, Google Maps, etc.)</li>
+            <li>Permite visualizar coberturas, enlaces y topologías de red</li>
+            <li>Muy usado en educación, radioaficionados y planificación profesional</li>
+        </ul>
+    </div>
+</div>
+
     </div>
 
     <script>
-        // Función para cambiar secciones
         function showSection(sectionId) {
-            // Ocultar todas las secciones
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => section.classList.remove('active'));
             
-            // Desactivar todas las pestañas
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             
-            // Mostrar la sección seleccionada
             document.getElementById(sectionId).classList.add('active');
             event.target.classList.add('active');
             
-            // Animar elementos secuencialmente
             animateElements(sectionId);
         }
 
-        // Función para animar elementos secuencialmente
         function animateElements(sectionId) {
             const section = document.getElementById(sectionId);
             const cards = section.querySelectorAll('.tech-card, .info-card, .security-item');
             
-            // Resetear animaciones
             cards.forEach(card => {
                 card.classList.remove('animate-card');
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
             });
             
-            // Animar cada elemento con delay
             cards.forEach((card, index) => {
                 setTimeout(() => {
                     card.classList.add('animate-card');
                     card.style.animationDelay = '0s';
-                }, index * 50); // 0.05 segundos entre cada animación
+                }, index * 55);
             });
         }
 
-        // Animar elementos al cargar la página
         window.addEventListener('load', () => {
             animateElements('overview');
         });
 
-        // Configuración común de Chart.js
         Chart.defaults.font.family = 'Segoe UI';
         Chart.defaults.color = '#333';
 
-        // Gráfico de introducción
-        const overviewCtx = document.getElementById('overviewChart').getContext('2d');
-        new Chart(overviewCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Wi-Fi', 'Bluetooth', 'GSM/UMTS', 'IrDA', 'Otros'],
-                datasets: [{
-                    data: [45, 25, 20, 5, 5],
-                    backgroundColor: [
-                        '#667eea',
-                        '#764ba2',
-                        '#f093fb',
-                        '#f5576c',
-                        '#4facfe'
-                    ]
-                }]
+const overviewCtx = document.getElementById('overviewChart').getContext('2d');
+new Chart(overviewCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Wi-Fi', 'Bluetooth', 'GSM/UMTS', 'IrDA', 'Otros'],
+        datasets: [{
+            data: [45, 25, 20, 5, 5],
+            backgroundColor: [
+                '#667eea',
+                '#764ba2',
+                '#f093fb',
+                '#f5576c',
+                '#4facfe'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Distribución de Tecnologías Inalámbricas',
+                font: { size: 16 }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Distribución de Tecnologías Inalámbricas',
-                        font: { size: 16 }
-                    },
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
+            legend: {
+                position: 'bottom'
             }
-        });
+        }
+    }
+});
 
-        // Gráfico de radio móvil
-        const mobileCtx = document.getElementById('mobileChart').getContext('2d');
-        new Chart(mobileCtx, {
-            type: 'polarArea',
-            data: {
-                labels: ['Servicios de Emergencia', 'Transporte/Logística', 'Construcción', 'Seguridad Privada', 'Servicios Públicos'],
-                datasets: [{
-                    data: [35, 25, 15, 15, 10],
-                    backgroundColor: [
-                        '#f44336',
-                        '#2196f3', 
-                        '#ff9800',
-                        '#4caf50',
-                        '#9c27b0'
-                    ]
-                }]
+const mobileCtx = document.getElementById('mobileChart').getContext('2d');
+new Chart(mobileCtx, {
+    type: 'polarArea',
+    data: {
+        labels: [
+            'Emergencias y Rescate', 
+            'Gestión de Flotas', 
+            'Coordinación en Obras', 
+            'Seguridad Empresarial', 
+            'Infraestructura Crítica'
+        ],
+        datasets: [{
+            data: [35, 25, 15, 15, 10],
+            backgroundColor: [
+                '#f44336',
+                '#2196f3', 
+                '#ff9800',
+                '#4caf50',
+                '#9c27b0'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Distribución de Uso del Radio mobile por Sector',
+                font: { size: 16 }
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Distribución de Uso de Radios Móviles por Sector',
-                        font: { size: 16 }
-                    },
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
+            legend: {
+                position: 'bottom'
             }
-        });
+        }
+    }
+});
 
-        // Gráfico de tipos de redes
         const typesCtx = document.getElementById('typesChart').getContext('2d');
         new Chart(typesCtx, {
             type: 'bar',
@@ -690,7 +764,6 @@
             }
         });
 
-        // Gráfico de estándares IEEE 802.11
         const ieeeCtx = document.getElementById('ieeeChart').getContext('2d');
         new Chart(ieeeCtx, {
             type: 'line',
@@ -726,7 +799,6 @@
             }
         });
 
-        // Gráfico de canales Wi-Fi
         const channelsCtx = document.getElementById('channelsChart').getContext('2d');
         new Chart(channelsCtx, {
             type: 'bar',
@@ -737,7 +809,7 @@
                     data: [2412, 2417, 2422, 2427, 2432, 2437, 2442, 2447, 2452, 2457, 2462, 2467, 2472],
                     backgroundColor: function(context) {
                         const value = context.parsed.x;
-                        if (value === 0 || value === 5 || value === 10) { // Canales 1, 6, 11
+                        if (value === 0 || value === 5 || value === 10) {
                             return '#667eea';
                         }
                         return '#764ba2';
@@ -772,7 +844,6 @@
             }
         });
 
-        // Gráfico de dispositivos
         const devicesCtx = document.getElementById('devicesChart').getContext('2d');
         new Chart(devicesCtx, {
             type: 'radar',
@@ -814,7 +885,6 @@
             }
         });
 
-        // Gráfico de seguridad
         const securityCtx = document.getElementById('securityChart').getContext('2d');
         new Chart(securityCtx, {
             type: 'bar',
